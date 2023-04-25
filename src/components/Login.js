@@ -81,11 +81,15 @@ const Login = () => {
         </form>
         <hr />
         <div className="mt-5">
+          <button
+            onClick={handleGoogleSignIn}
+          >
+
           <GoogleButton
             className=""
             type="dark"
-            onClick={handleGoogleSignIn}
-          />
+            />
+            </button>
         </div>
       </div>
       <div className="p-4 box mt-3 text-center">
