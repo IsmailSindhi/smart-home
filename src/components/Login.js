@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import GoogleButton from "react-google-button";
+import GoogleButton from "react-google-button";
 import { useUserAuth } from "../context/UserAuthContext";
 import { getRedirectResult } from "firebase/auth";
 import { auth } from "../firebase";
@@ -84,11 +84,10 @@ const Login = () => {
           <button
             onClick={handleGoogleSignIn}
           >
-            Sign In With Google
-          {/* <GoogleButton
+          <GoogleButton
             className=""
             type="dark"
-            /> */}
+            />
             </button>
         </div>
       </div>
