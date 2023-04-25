@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     try {
       await googleSignIn();
     } catch (error) {
@@ -84,11 +84,11 @@ const Login = () => {
           <button
             onClick={handleGoogleSignIn}
           >
-
-          <GoogleButton
+            Sign In With Google
+          {/* <GoogleButton
             className=""
             type="dark"
-            />
+            /> */}
             </button>
         </div>
       </div>
