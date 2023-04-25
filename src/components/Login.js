@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   const handleGoogleSignIn = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     try {
       await googleSignIn();
     } catch (error) {
@@ -34,19 +34,25 @@ const Login = () => {
   
   useEffect(() => {
     async function result (){
-      const response = await getRedirectResult(auth);
-      if(response){
-        navigate("/home");
+      try{
+
+        const response = await getRedirectResult(auth);
+        if(response){
+          navigate("/home");
+          
+        }else{
+          setLoading(false)
+          
+        }
         
-      }else{
+      } catch (error) {
         setLoading(false)
-        
+        console.log(error.message)
       }
-      
     }
     result()
     console.log(loading)
-  },[])
+  },[loading,navigate])
 
   return ( loading ?<div className="flex items-center justify-center ">
   <div className="w-40 h-40 border-t-4 border-b-4 border-blue-500 rounded-full animate-spin"></div>
